@@ -1,0 +1,22 @@
+INSERT INTO `users_schema`.`users` (`id`, `first_name`, `last_name`, `email`) VALUES ('1', 'Shane', 'Nosack', 'sarus333@yahoo.com');
+INSERT INTO `users_schema`.`users` (`id`, `first_name`, `last_name`, `email`) VALUES ('2', 'Ciso', 'Lobo', 'cisolobo@codingdojo.com');
+INSERT INTO `users_schema`.`users` (`id`, `first_name`, `last_name`, `email`) VALUES ('3', 'Bob', 'ninja', 'bobninja@ninja.com');
+
+SELECT * FROM users
+
+SELECT * FROM users
+WHERE email = 'sarus333@yahoo.com';
+
+SELECT * FROM users
+WHERE id = 3;
+
+UPDATE users SET last_name = 'Pancakes'
+WHERE id = 3;
+
+DELETE FROM users WHERE id = 2;  (I'm sorry Ciso!)
+
+SELECT * FROM users
+ORDER BY first_name ASC;
+
+SELECT * FROM users
+ORDER BY first_name DESC;

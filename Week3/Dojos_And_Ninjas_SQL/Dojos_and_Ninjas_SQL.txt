@@ -1,0 +1,44 @@
+INSERT INTO dojos (name)
+VALUES('Coding Dojo'),('Python Academy'),('MySQL School of Hard Knocks')
+
+DELETE FROM dojos
+WHERE id < 4
+
+INSERT INTO dojos (name)
+VALUES('Dojo Academy'),('Lighthouse Dojo'),('Mr. Lobos House of Pain')
+
+INSERT INTO ninjas (first_name, last_name, age, dojo_id)
+SELECT 'Shane', 'Nosack', 32, 5 UNION ALL
+SELECT 'Carrie', 'Nosack', 38, 5 UNION ALL
+SELECT 'Wyatt', 'Nosack', 25, 5;
+
+INSERT INTO ninjas (first_name, last_name, age, dojo_id)
+SELECT 'Jeff', 'Hardy', 42, 6 UNION ALL
+SELECT 'Steve', 'Austin', 55, 6 UNION ALL
+SELECT 'Mark', 'Callaway', 25, 6;
+
+INSERT INTO ninjas (first_name, last_name, age, dojo_id)
+SELECT 'Seth', 'Rollins', 36, 7 UNION ALL
+SELECT 'Roman', 'Reigns', 38, 7 UNION ALL
+SELECT 'Dean', 'Ambrose', 39, 7;
+
+SELECT * FROM ninjas
+WHERE dojo_id = 5
+
+SELECT * FROM ninjas
+WHERE dojo_id = 7
+
+SELECT dojos.*
+FROM dojos
+JOIN ninjas ON dojos.id = ninjas.dojo_id
+ORDER BY ninjas.id DESC
+LIMIT 1;
+
+SELECT ninjas.*, dojos.*
+FROM ninjas
+JOIN dojos ON ninjas.dojo_id = dojos.id
+WHERE ninjas.id = 6;
+
+SELECT ninjas.*, dojos.*
+FROM ninjas
+JOIN dojos ON ninjas.dojo_id = dojos.id;
