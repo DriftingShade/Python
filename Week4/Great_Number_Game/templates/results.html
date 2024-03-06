@@ -10,19 +10,6 @@
 <body>
     <h1 class="text-center">Welcome To The Great Number Game!</h1>
     <p class="text-center mt-5">I am thinking of a number between 1 and 100</p>
-    <div class="card mt-5 w-25 text-center m-auto">
-        <div class="card-header">
-            Take A Guess!
-        </div>
-        <div class="card-body">
-            <form action="/guess">
-                <div class="container mt-3 mb-3">
-                    <input type="text" name="guess">
-                </div>
-                <input type="submit" name="submit" id="submit" class="btn btn-primary">
-            </form>
-        </div>
-    </div>
 
     {% if guess == number %}
         <div class="card m-auto w-25 text-center mt-5 bg-success">
