@@ -1,0 +1,10 @@
+Changed the Password got me this error:
+pymysql.err.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+Removed the S on cursors and got this:
+ModuleNotFoundError: No module named 'pymysql.cursor'
+
+Got a 'Site Cannot Be Reached' Error page when I misspelled first_flask in the results = connectToMySQL('frst_flask').query_db(query) line
+
+Turns out the server was inactive when I did that.  Got this error when misspelling first_flask:
+pymysql.err.OperationalError: (1049, "Unknown database 'frst_flask'")
