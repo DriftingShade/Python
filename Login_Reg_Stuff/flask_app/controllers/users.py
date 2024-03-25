@@ -1,7 +1,7 @@
-# This will be in your controllers folder.  Remember to 'pipenv install flask pymysql flask_bcrypt' in your main project folder!
 from flask_app import app, bcrypt
 from flask import flash, render_template, redirect, request, session
 from flask_app.models.user import User
+from flask_app.models.post import Post
 
 
 @app.route("/")
@@ -38,7 +38,8 @@ def dashboard():
         flash("You must be logged in to view that page.", "login")
         return redirect("/")
     user = User.find_by_id({session["user_id"]})
-    return render_template("dashboard.html", user=user)
+    posts = Post.get_all()
+    return render_template("dashboard.html", user=user, posts=posts)
 
 
 @app.post("/users/login")
